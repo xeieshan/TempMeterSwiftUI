@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   # Basic Information
   spec.name         = "TempMeterSwiftUI"
-  spec.version      = "v0.0.1"
+  spec.version      = "0.0.1"
   spec.summary      = "A SwiftUI package for creating customizable speedometers."
 
   spec.description  = <<-DESC
