@@ -15,10 +15,10 @@ public struct TemperatureGaugeView: View {
     public var unit: String
     public var temperatureMin: CGFloat
     public var temperatureMax: CGFloat
-    @State private var meterAngle: Double
-    @State private var indicatorsConfigurations: [IndicatorViewConfiguration] = []
-    public var temperature: CGFloat
-    public init(animationDuration: TimeInterval, progress: CGFloat = 0.0, numberOfSegments: Int = 100, step: Int = 10, fontSize: CGFloat = 16, unit: String, temperatureMin: CGFloat, temperatureMax: CGFloat, temperature: CGFloat) {
+    @Binding private var meterAngle: Double
+    @Binding private var indicatorsConfigurations: [IndicatorViewConfiguration] = []
+    @Binding public var temperature: CGFloat
+    @Binding public init(animationDuration: TimeInterval, progress: CGFloat = 0.0, numberOfSegments: Int = 100, step: Int = 10, fontSize: CGFloat = 16, unit: String, temperatureMin: CGFloat, temperatureMax: CGFloat, temperature: CGFloat) {
         self.animationDuration = animationDuration
         self.progress = progress
         self.numberOfSegments = numberOfSegments
