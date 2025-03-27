@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   # Basic Information
   spec.name         = "TempMeterSwiftUI"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.4"
   spec.summary      = "A SwiftUI package for creating customizable speedometers."
 
   spec.description  = <<-DESC
@@ -24,7 +24,7 @@ Pod::Spec.new do |spec|
   spec.swift_version = "5.0"
 
   # Source Location
-  spec.source = { :git => "https://github.com/xeieshan/TempMeterSwiftUI.git", :tag => "v0.0.3" }
+  spec.source = { :git => "https://github.com/xeieshan/TempMeterSwiftUI.git", :tag => "v0.0.4" }
 
 
   # Source Files (Swift Package)

@@ -38,35 +38,42 @@ public struct TemperatureGaugeView: View {
     }
     
     public var body: some View {
-        TemperatureView(
-            startAngle: Constants.startAngle,
-            endAngle: Constants.endAngle,
-            meterAngle: meterAngle,
-            progress: progress,
-            numberOfSegments: numberOfSegments,
-            step: step,
-            fontSize: fontSize,
-            indicatorsConfigurations: indicatorsConfigurations,
-            unit: unit,
-            temperature: temperature,
-            temperatureMin: temperatureMin,
-            temperatureMax: temperatureMax
-        )
-        .onAppear {
-            
-            Task {
-                indicatorsConfigurations = await Calculator.indicatorsConfigurations(
-                    startAngle: Constants.startAngle,
-                    endAngle: Constants.endAngle,
-                    numberOfSegments: numberOfSegments
-                )
+        if #available(macOS 11.0, *) {
+            TemperatureView(
+                startAngle: Constants.startAngle,
+                endAngle: Constants.endAngle,
+                meterAngle: meterAngle,
+                progress: progress,
+                numberOfSegments: numberOfSegments,
+                step: step,
+                fontSize: fontSize,
+                indicatorsConfigurations: indicatorsConfigurations,
+                unit: unit,
+                temperature: temperature,
+                temperatureMin: temperatureMin,
+                temperatureMax: temperatureMax
+            )
+            .onAppear {
+                
+                Task {
+                    indicatorsConfigurations = await Calculator.indicatorsConfigurations(
+                        startAngle: Constants.startAngle,
+                        endAngle: Constants.endAngle,
+                        numberOfSegments: numberOfSegments
+                    )
+                }
+                
             }
-            
-        }
-        .onChange(of: progress) { _ in
-            Task {
-                await animateMeter()
+            .onChange(of: progress) { _ in
+                Task {
+                    await animateMeter()
+                }
             }
+        } else {
+            Text("This feature requires macOS 11.0 or later.")
+                .font(.headline)
+                .foregroundColor(.red)
+                .padding()
         }
     }
 
@@ -81,14 +88,14 @@ public struct TemperatureGaugeView: View {
 }
 
 
-#Preview {
-        TemperatureGaugeView(
-            animationDuration: 1.5,
-            progress: 0.5,
-            numberOfSegments: 50,
-            step: 5
-            
-        )
-        .frame(width: 200, height: 200)
-    
-}
+//#Preview {
+//        TemperatureGaugeView(
+//            animationDuration: 1.5,
+//            progress: 0.5,
+//            numberOfSegments: 50,
+//            step: 5
+//            
+//        )
+//        .frame(width: 200, height: 200)
+//    
+//}

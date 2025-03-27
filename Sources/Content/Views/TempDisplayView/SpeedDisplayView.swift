@@ -14,7 +14,7 @@ struct SpeedDisplayView: View {
     var body: some View {
         VStack(spacing: 6.0) {
 //            Text(String(format: "%.f", progress * CGFloat(numberOfSegments)))
-            if #available(iOS 16.0, *) {
+            if #available(iOS 16.0, macOS 13.0, *) {
                 Text(String(format: "%.f", CGFloat(temperature)))
                     .font(.largeTitle)
                     .bold()
