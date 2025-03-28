@@ -8,19 +8,19 @@ import SwiftUI
 
 public struct TemperatureGaugeView: View {
     public var animationDuration: TimeInterval
-    public var progress: CGFloat
+    @Binding public var progress: CGFloat
     public var numberOfSegments: Int
     public var step: Int
     public var fontSize: CGFloat
     public var unit: String
     public var temperatureMin: CGFloat
     public var temperatureMax: CGFloat
-    @State private var meterAngle: Double
+    @State public var meterAngle: Double
     @State private var indicatorsConfigurations: [IndicatorViewConfiguration] = []
     @Binding public var temperature: CGFloat
-    public init(animationDuration: TimeInterval, progress: CGFloat = 0.0, numberOfSegments: Int = 100, step: Int = 10, fontSize: CGFloat = 16, unit: String, temperatureMin: CGFloat, temperatureMax: CGFloat, temperature: Binding<CGFloat>) {
+    public init(animationDuration: TimeInterval, progress: Binding<CGFloat>, numberOfSegments: Int = 100, step: Int = 10, fontSize: CGFloat = 16, unit: String, temperatureMin: CGFloat, temperatureMax: CGFloat, temperature: Binding<CGFloat>) {
         self.animationDuration = animationDuration
-        self.progress = progress
+        self._progress = progress
         self.numberOfSegments = numberOfSegments
         self.step = step
         self.fontSize = fontSize
@@ -29,6 +29,7 @@ public struct TemperatureGaugeView: View {
         self.temperatureMin = temperatureMin
         self.temperatureMax = temperatureMax
         self._temperature = temperature
+       
         
     }
     
@@ -99,3 +100,19 @@ public struct TemperatureGaugeView: View {
 //        .frame(width: 200, height: 200)
 //    
 //}
+//#Preview {
+//    TemperatureGaugeView(
+//        animationDuration: 1.5,
+//        progress: .constant(0.5),
+//        numberOfSegments: 50,
+//        step: 5,
+//        fontSize: 16,
+//        unit: "°C",
+//        temperatureMin: -40.0,
+//        temperatureMax: 120.0,
+//        temperature: .constant(25.0)
+//        
+//    )
+//    .frame(width: 200, height: 200)
+//}
+
