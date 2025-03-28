@@ -6,13 +6,13 @@
 import SwiftUI
 
 public struct SpeedIndicatorView: View {
-    public let labelValue: Int
+    public let labelValue: Double
     public let rect: CGRect
     public let angle: Double
     public let radius: CGFloat
     public let fontSize: CGFloat
     
-    public init(labelValue: Int, rect: CGRect, angle: Double, radius: CGFloat, fontSize: CGFloat) {
+    public init(labelValue: Double, rect: CGRect, angle: Double, radius: CGFloat, fontSize: CGFloat) {
         self.labelValue = labelValue
         self.rect = rect
         self.angle = angle
@@ -21,7 +21,7 @@ public struct SpeedIndicatorView: View {
     }
     
     public var body: some View {
-        Text("\(labelValue)")
+        Text(String(format: "%.1f", labelValue))
             .font(.system(size: fontSize))
             .offset(
                 x: Calculator.position(
