@@ -87,32 +87,3 @@ public struct TemperatureGaugeView: View {
         }
     }
 }
-
-
-//#Preview {
-//        TemperatureGaugeView(
-//            animationDuration: 1.5,
-//            progress: 0.5,
-//            numberOfSegments: 50,
-//            step: 5
-//            
-//        )
-//        .frame(width: 200, height: 200)
-//    
-//}
-#Preview {
-    TemperatureGaugeView(
-        animationDuration: 1.5,
-        progress: .constant(0.5),
-        numberOfSegments: 50,
-        step: 5,
-        fontSize: 16,
-        unit: "°C",
-        temperatureMin: -40.0,
-        temperatureMax: 120.0,
-        temperature: .constant(25.0)
-        
-    )
-    .frame(width: 200, height: 200)
-}
-
