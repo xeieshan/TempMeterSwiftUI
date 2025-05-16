@@ -15,7 +15,7 @@ struct SpeedDisplayView: View {
         VStack(spacing: 6.0) {
 //            Text(String(format: "%.f", progress * CGFloat(numberOfSegments)))
             if #available(iOS 16.0, macOS 13.0, *) {
-                Text(String(format: "%.f", CGFloat(temperature)))
+                Text(String(format: "%.1f", CGFloat(temperature)))
                     .font(.largeTitle)
                     .bold()
                     .monospaced()
@@ -23,7 +23,7 @@ struct SpeedDisplayView: View {
                         transaction.animation = nil
                     }
             } else {
-                Text(String(format: "%.f", CGFloat(temperature)))
+                Text(String(format: "%.1f", CGFloat(temperature)))
                     .font(.largeTitle)
                     .transaction { transaction in
                         transaction.animation = nil
