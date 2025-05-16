@@ -53,7 +53,7 @@ struct IndicatorsView: View {
 
 //                let roundedValue = (scaledValue + CGFloat(temperatureMin)).rounded(.up)
                 let roundedValue = (scaledValue + CGFloat(temperatureMin))
-                let labelValue: Double = String(format: "%.1f", Double(roundedValue))
+                let labelValue: Double = Double(String(format: "%.1f", Double(roundedValue))) ?? Double(roundedValue)
 
                 
                 
