@@ -1,8 +1,6 @@
 Pod::Spec.new do |spec|
-
-  # Basic Information
   spec.name         = "TempMeterSwiftUI"
-  spec.version      = "0.1.3"
+  spec.version      = "0.1.4"
   spec.summary      = "A SwiftUI package for creating customizable speedometers."
 
   spec.description  = <<-DESC
@@ -12,29 +10,14 @@ Pod::Spec.new do |spec|
   DESC
 
   spec.homepage     = "https://github.com/xeieshan/TempMeterSwiftUI"
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
+  spec.author       = { "Zeeshan Haider" => "xeieshan@gmail.com" }
 
-  # License
-  spec.license = { :type => "MIT", :file => "LICENSE" }
+  spec.platform     = :ios, "15.0"
+  spec.swift_version = "5.9"
 
-  # Author Information
-  spec.author = { "Zeeshan Haider" => "xeieshan@gmail.com" }
-  
-  # Platform & Swift Version
-  spec.platform = :ios, "15.0"
-  spec.swift_version = "5.0"
+  spec.source       = { :git => "https://github.com/xeieshan/TempMeterSwiftUI.git", :tag => "v0.1.4" }
+  spec.source_files = "Sources/**/*.{swift}"
 
-  # Source Location
-  spec.source = { :git => "https://github.com/xeieshan/TempMeterSwiftUI.git", :tag => "v0.1.3" }
-
-
-  # Source Files (Swift Package)
-  spec.source_files  = "Sources/**/*.{swift}"
-  
-  # Dependencies (if any)
-  # spec.dependency "Alamofire", "~> 5.6"
-
-  # Frameworks (if needed)
-  spec.framework  = "UIKit"
-
+  spec.framework    = "UIKit"
 end
-

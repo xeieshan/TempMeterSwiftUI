@@ -2,6 +2,9 @@
 
 `TempMeterSwiftUI` is a SwiftUI library that provides a customizable temperature gauge for your iOS applications. It includes a variety of components and configurations to create an animated temperature meter with indicator lines and labels.
 
+![Temperature Gauge: ](assets/example1.png)
+
+
 ## Features
 
 - **Customizable temperature gauge**: Easily adjust the number of segments, steps, and animation duration
@@ -33,6 +36,8 @@ The library includes several reusable shapes for drawing arcs and lines:
 - `ArcShape`: Draws an arc from a start angle to an end angle
 - `ArcLineShape`: Draws a line from the center of a rectangle to a calculated position based on an angle
 - `SpeedometerShape`: Draws the indicator lines based on the provided configurations
+
+![Temperature Gauge Example 2](assets/example2.png)
 
 ## Usage Example
 

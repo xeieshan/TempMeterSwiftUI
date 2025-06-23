@@ -5,16 +5,19 @@ import PackageDescription
 let package = Package(
     name: "TempMeterSwiftUI",
     platforms: [
-        .macOS(.v11_0),
+        .macOS(.v11),
         .iOS(.v15)
     ],
     products: [
         .library(
             name: "TempMeterSwiftUI",
-            targets: ["TempMeterSwiftUI"]),
+            targets: ["TempMeterSwiftUI"]
+        ),
     ],
     targets: [
         .target(
-            name: "TempMeterSwiftUI")
+            name: "TempMeterSwiftUI",
+            path: "Sources"
+        )
     ]
 )
